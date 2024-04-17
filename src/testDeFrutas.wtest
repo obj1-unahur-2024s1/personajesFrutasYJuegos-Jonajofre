@@ -1,4 +1,6 @@
 import frutas.*
+import personajes.*
+import juegos.*
 
 test "la manzana verde aporta 7 de energia" {
 
@@ -6,4 +8,34 @@ test "la manzana verde aporta 7 de energia" {
 	assert.notThat(false)
 	assert.equals(valor, objeto, mensajeDeConsulta())*/
     assert.equals(7, manzana.energiaQueAporta())
+}
+test "martin esta feliz" {
+
+	assert.that(martin.esFeliz())
+	}
+	
+test "martin al principio no tiene hambre"{
+	assert.notThat(martin.tieneHambre())
+}
+test "martin compra manzana, la come y su energia queda a 107"{
+	martin.comprar(manzana)
+	martin.comer()
+	assert.equals(107, martin.energia())
+}
+test "martin juega al futbol y queda con hambre y energia en"{
+	martin.hacerDeporte(futbol,90)
+	assert.that(martin.tieneHambre())
+	assert.equals(90, martin.energia())
+}
+test "martin juega al voley 1 vez y es felis"{
+	martin.hacerDeporte(voley, 10)
+	assert.notThat(martin.esFeliz())
+	
+}
+test "martin juega 3 veces al voley cantidad 3"{
+	martin.hacerDeporte(voley, 10)
+	martin.hacerDeporte(voley, 20)
+	martin.hacerDeporte(voley, 2)
+	assert.equals(3, martin.actDelDia())
+	
 }

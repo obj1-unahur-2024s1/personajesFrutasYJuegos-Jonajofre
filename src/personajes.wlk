@@ -8,9 +8,11 @@ object martin {
 	var actDelDia = 0
 	var despensa = vasoDeAgua
 	
+	method actDelDia() = actDelDia
+	method tieneHambre() = tieneHambre
 	method energia() = energia
 	method esFeliz(){
-	return	energia == 80 || actDelDia >= 2 && not tieneHambre
+	return	energia > 80 || actDelDia >= 2 && not tieneHambre
 	}
 	method comprar(unaFruta){
 		despensa = unaFruta
